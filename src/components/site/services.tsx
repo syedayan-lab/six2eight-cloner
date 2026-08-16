@@ -111,7 +111,7 @@ export function ClientLogos() {
               style={{ ["--marquee-duration" as string]: idx % 2 ? "55s" : "45s" }}
             >
               {[...row, ...row].map((c, i) => (
-                <LogoPill key={`${c.name}-${i}`} name={c.name} domain={c.domain} />
+                <LogoPill key={`${c.name}-${i}`} name={c.name} slug={c.slug} />
               ))}
             </div>
           </div>
