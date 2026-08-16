@@ -72,16 +72,16 @@ export function Services() {
   );
 }
 
-function LogoPill({ name, domain }: { name: string; domain: string }) {
+function LogoPill({ name, slug }: { name: string; slug: string }) {
   return (
-    <span className="pill group flex shrink-0 items-center gap-2.5 border border-border bg-surface px-5 py-2.5 transition-colors hover:border-primary/50 hover:bg-surface-2 sm:gap-3 sm:px-7 sm:py-3">
+    <span className="pill group flex shrink-0 items-center gap-2.5 border border-border bg-surface px-4 py-2.5 transition-colors hover:border-primary/50 hover:bg-surface-2 sm:gap-3 sm:px-7 sm:py-3">
       <img
-        src={`https://logo.clearbit.com/${domain}`}
+        src={`https://cdn.simpleicons.org/${slug}/9ca3af`}
         alt={`${name} logo`}
         loading="lazy"
         width={24}
         height={24}
-        className="size-5 shrink-0 rounded-sm object-contain opacity-80 transition-opacity group-hover:opacity-100 sm:size-6"
+        className="size-5 shrink-0 object-contain transition-opacity sm:size-6"
         onError={(e) => {
           e.currentTarget.style.display = "none";
         }}
@@ -92,6 +92,7 @@ function LogoPill({ name, domain }: { name: string; domain: string }) {
     </span>
   );
 }
+
 
 export function ClientLogos() {
   const row1 = clientLogos.slice(0, 13);
