@@ -1,0 +1,84 @@
+import { ArrowUpRight, Quote, Star } from "lucide-react";
+import { CALENDLY, stats, testimonials } from "@/data/site";
+
+export function Testimonials() {
+  return (
+    <section className="border-t border-border py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <p className="eyebrow">
+          <span className="size-1.5 rounded-full bg-primary" />
+          Testimonials
+        </p>
+        <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
+          Words from the People We&rsquo;ve Worked With
+        </h2>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {testimonials.map((t) => (
+            <figure key={t.name} className="glass-card flex h-full flex-col justify-between p-7">
+              <Quote className="size-7 text-primary" />
+              <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
+                {t.quote}
+              </blockquote>
+              <figcaption className="mt-6 flex items-center gap-3 border-t border-border pt-5">
+                <span className="pill flex size-10 items-center justify-center bg-primary text-sm font-semibold text-primary-foreground">
+                  {t.name.charAt(0)}
+                </span>
+                <span>
+                  <span className="block text-sm font-medium text-foreground">{t.name}</span>
+                  <span className="flex gap-0.5">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <Star key={i} className="size-3 fill-primary text-primary" />
+                    ))}
+                  </span>
+                </span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-12 flex flex-col items-center gap-5 text-center">
+          <p className="text-sm text-muted-foreground">
+            <span className="font-semibold text-foreground">200+ Happy Customers</span> based on
+            compliments and customer reviews
+          </p>
+          <a
+            href={CALENDLY}
+            target="_blank"
+            rel="noreferrer"
+            className="pill inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+          >
+            Book a Free Consultation <ArrowUpRight className="size-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function Strategy() {
+  return (
+    <section id="strategy" className="border-t border-border py-20 sm:py-28">
+      <div className="mx-auto max-w-7xl px-5 lg:px-8">
+        <p className="eyebrow">
+          <span className="size-1.5 rounded-full bg-primary" />
+          Strategy
+        </p>
+        <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
+          Why brands choose <span className="text-primary">six2eight</span> for design &amp;
+          development?
+        </h2>
+
+        <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {stats.map((s) => (
+            <div key={s.label} className="bg-surface p-8">
+              <p className="text-display text-4xl text-primary sm:text-5xl">{s.value}</p>
+              <h3 className="mt-3 text-base font-medium text-foreground">{s.label}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.copy}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
