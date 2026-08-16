@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function Process() {
   const [active, setActive] = useState(0);
-  const step = processSteps[active];
+  const step = processSteps[active] ?? processSteps[0]!;
 
   return (
     <section className="border-t border-border py-20 sm:py-28">
