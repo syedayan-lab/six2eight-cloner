@@ -15,7 +15,7 @@ export function Testimonials() {
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} className="glass-card flex h-full flex-col justify-between p-7">
+            <figure key={t.name} className="glass-card hover-lift flex h-full flex-col justify-between p-6 sm:p-7">
               <Quote className="size-7 text-primary" />
               <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 {t.quote}

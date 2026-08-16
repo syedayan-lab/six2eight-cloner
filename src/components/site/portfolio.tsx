@@ -40,7 +40,7 @@ export function Portfolio() {
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {visible.map((p) => (
-            <article key={p.name} className="group glass-card overflow-hidden">
+            <article key={p.name} className="group glass-card hover-lift overflow-hidden">
               <div className="relative aspect-16/10 overflow-hidden">
                 <img
                   src={p.image}
