@@ -72,29 +72,45 @@ export function Services() {
   );
 }
 
+function LogoPill({ name, domain }: { name: string; domain: string }) {
+  return (
+    <span className="pill group flex shrink-0 items-center gap-2.5 border border-border bg-surface px-5 py-2.5 transition-colors hover:border-primary/50 hover:bg-surface-2 sm:gap-3 sm:px-7 sm:py-3">
+      <img
+        src={`https://logo.clearbit.com/${domain}`}
+        alt={`${name} logo`}
+        loading="lazy"
+        width={24}
+        height={24}
+        className="size-5 shrink-0 rounded-sm object-contain opacity-80 transition-opacity group-hover:opacity-100 sm:size-6"
+        onError={(e) => {
+          e.currentTarget.style.display = "none";
+        }}
+      />
+      <span className="whitespace-nowrap text-sm font-medium tracking-tight text-muted-foreground transition-colors group-hover:text-foreground sm:text-lg">
+        {name}
+      </span>
+    </span>
+  );
+}
+
 export function ClientLogos() {
   const row1 = clientLogos.slice(0, 13);
   const row2 = clientLogos.slice(13);
 
   return (
-    <section className="border-t border-border py-16">
+    <section className="border-t border-border py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <p className="eyebrow justify-center w-full text-center">Projects Completed For</p>
       </div>
-      <div className="mt-10 space-y-6">
+      <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-6">
         {[row1, row2].map((row, idx) => (
           <div key={idx} className="marquee-mask overflow-hidden">
             <div
               className={idx % 2 ? "flex w-max gap-3 animate-marquee-rev" : "flex w-max gap-3 animate-marquee"}
               style={{ ["--marquee-duration" as string]: idx % 2 ? "55s" : "45s" }}
             >
-              {[...row, ...row].map((name, i) => (
-                <span
-                  key={`${name}-${i}`}
-                  className="pill shrink-0 border border-border bg-surface px-7 py-3 text-lg font-medium tracking-tight text-muted-foreground"
-                >
-                  {name}
-                </span>
+              {[...row, ...row].map((c, i) => (
+                <LogoPill key={`${c.name}-${i}`} name={c.name} domain={c.domain} />
               ))}
             </div>
           </div>
@@ -103,3 +119,4 @@ export function ClientLogos() {
     </section>
   );
 }
+
