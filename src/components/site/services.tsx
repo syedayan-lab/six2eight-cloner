@@ -34,9 +34,10 @@ export function Services() {
           {services.map((s) => (
             <article
               key={s.title}
-              className="group glass-card overflow-hidden transition-colors hover:border-primary/50"
+              className="group glass-card hover-lift overflow-hidden hover:border-primary/50"
             >
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-40 overflow-hidden sm:h-48">
+
                 <img
                   src={s.image}
                   alt={s.title}
