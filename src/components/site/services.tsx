@@ -95,8 +95,9 @@ function LogoPill({ name, slug }: { name: string; slug: string }) {
 
 
 export function ClientLogos() {
-  const row1 = clientLogos.slice(0, 13);
-  const row2 = clientLogos.slice(13);
+  const row1 = clientLogos.slice(0, 15);
+  const row2 = clientLogos.slice(15);
+
 
   return (
     <section className="border-t border-border py-14 sm:py-16">
