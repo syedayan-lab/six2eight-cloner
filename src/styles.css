@@ -187,6 +187,31 @@
   animation: marquee-x-rev var(--marquee-duration, 40s) linear infinite;
 }
 
+@keyframes card-drop {
+  0% {
+    opacity: 0;
+    transform: translateY(-140px) rotate(-14deg) scale(0.9);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(6px) rotate(var(--drop-tilt, 0deg)) scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--drop-tilt, 0deg)) scale(1);
+  }
+}
+
+@utility animate-card-drop {
+  animation: card-drop 0.85s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation-delay: var(--drop-delay, 0s);
+  transition: transform 0.35s ease;
+
+  &:hover {
+    transform: translateY(-6px) rotate(0deg) scale(1.06);
+  }
+}
+
 @utility animate-fade-up {
   animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
