@@ -43,7 +43,23 @@ export function Hero() {
             UI UX Design &amp; Web Development Agency
           </p>
           <h1 className="text-display mt-6 text-4xl sm:text-6xl lg:text-7xl">
-            Custom <span className="italic font-light text-primary">UI UX</span> Design &amp;
+            Custom <span className="italic font-light text-primary">UI UX</span>
+            <span className="mx-2 inline-flex translate-y-1 items-center align-middle sm:mx-3">
+              {heroImages.slice(0, 3).map((img, i) => (
+                <span
+                  key={img.src}
+                  className="animate-card-drop -ml-4 h-8 w-12 overflow-hidden rounded-lg border border-border bg-surface shadow-lg first:ml-0 sm:h-12 sm:w-20 sm:rounded-xl"
+                  style={{
+                    ["--drop-delay" as string]: `${0.35 + i * 0.18}s`,
+                    ["--drop-tilt" as string]: `${(i - 1) * 7}deg`,
+                    zIndex: 3 - i,
+                  }}
+                >
+                  <img src={img.src} alt="" loading="lazy" className="size-full object-cover" />
+                </span>
+              ))}
+            </span>
+            Design &amp;
             <br className="hidden sm:block" /> Web Development Agency
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
