@@ -1,5 +1,6 @@
 import { ArrowUpRight, Star } from "lucide-react";
 import { CALENDLY, heroImages } from "@/data/site";
+import { FallingCards } from "./falling-cards";
 
 function Strip({ reverse, duration }: { reverse?: boolean; duration: string }) {
   const items = [...heroImages, ...heroImages];
@@ -36,7 +37,9 @@ export function Hero() {
         style={{ background: "var(--color-primary)" }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
+      <FallingCards />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-5 lg:px-8">
         <div className="mx-auto max-w-4xl text-center animate-fade-up">
           <p className="eyebrow justify-center">
             <span className="size-1.5 rounded-full bg-primary" />
