@@ -43,14 +43,22 @@ export function Hero() {
             UI UX Design &amp; Web Development Agency
           </p>
           <h1 className="text-display mt-6 text-4xl sm:text-6xl lg:text-7xl">
-            Custom <span className="italic font-light text-primary">UI UX</span>
+            <span className="animate-word-in" style={{ ["--word-delay" as string]: "0.05s" }}>
+              Custom
+            </span>{" "}
+            <span
+              className="animate-word-in italic font-light text-primary"
+              style={{ ["--word-delay" as string]: "0.25s" }}
+            >
+              UI UX
+            </span>
             <span className="mx-2 inline-flex translate-y-1 items-center align-middle sm:mx-3">
               {heroImages.slice(0, 3).map((img, i) => (
                 <span
                   key={img.src}
                   className="animate-card-drop -ml-4 h-8 w-12 overflow-hidden rounded-lg border border-border bg-surface shadow-lg first:ml-0 sm:h-12 sm:w-20 sm:rounded-xl"
                   style={{
-                    ["--drop-delay" as string]: `${0.35 + i * 0.18}s`,
+                    ["--drop-delay" as string]: `${0.5 + i * 0.16}s`,
                     ["--drop-tilt" as string]: `${(i - 1) * 7}deg`,
                     zIndex: 3 - i,
                   }}
@@ -59,9 +67,18 @@ export function Hero() {
                 </span>
               ))}
             </span>
-            Design &amp;
-            <br className="hidden sm:block" /> Web Development Agency
+            <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.05s" }}>
+              Design &amp;
+            </span>
+            <br className="hidden sm:block" />{" "}
+            <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.25s" }}>
+              Web Development
+            </span>{" "}
+            <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.45s" }}>
+              Agency
+            </span>
           </h1>
+
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
             We design high-performing websites, mobile apps, and SaaS platforms that delight users. And
             we build websites that turn those experiences into results. Enhance your brand, drive sales,
