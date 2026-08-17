@@ -39,7 +39,7 @@ export function FallingCards() {
       const cw = 220 * (0.55 + depth * 0.85);
       // keep mostly on the sides: left band or right band
       const band = Math.random() < 0.5 ? 0 : 1;
-      const margin = width < 640 ? 0.26 : 0.34;
+      const margin = width < 640 ? 0.24 : 0.3;
       return band === 0
         ? rand(-cw * 0.35, width * margin - cw * 0.5)
         : rand(width * (1 - margin) - cw * 0.4, width - cw * 0.6);
@@ -62,7 +62,7 @@ export function FallingCards() {
       const hpx = Math.round(wpx * rand(0.6, 1.25));
       c.el.style.width = `${wpx}px`;
       c.el.style.height = `${hpx}px`;
-      c.el.style.opacity = String(0.2 + c.depth * 0.5);
+      c.el.style.opacity = String(0.16 + c.depth * 0.34);
       c.el.style.filter = `blur(${((1 - c.depth) * 5).toFixed(2)}px)`;
       c.el.style.zIndex = String(Math.round(c.depth * 10));
     };
