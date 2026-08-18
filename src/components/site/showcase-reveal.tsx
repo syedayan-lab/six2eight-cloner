@@ -122,8 +122,9 @@ export function ShowcaseReveal() {
         />
         <div
           ref={mediaRef}
-          className="absolute left-1/2 top-[6vh] w-[94vw] max-w-[1700px] -translate-x-1/2 will-change-transform"
-          style={{ transformOrigin: "50% 0%" }}
+          className="absolute left-1/2 top-1/2 w-[94vw] max-w-[1700px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
+          style={{ transformOrigin: "50% 50%" }}
+
         >
           <div className="relative h-[88vh] overflow-hidden rounded-[28px] border border-border bg-ink p-2.5 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:p-4">
             <div className="grid h-full grid-cols-2 gap-2.5 overflow-hidden sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
