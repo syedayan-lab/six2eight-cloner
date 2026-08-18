@@ -48,7 +48,7 @@ export function ShowcaseReveal() {
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reduced) {
-      media.style.transform = "translate3d(0,0,0) scale(1)";
+      media.style.transform = "translate3d(-50%, -50%, 0) scale(1)";
       media.style.opacity = "1";
       return;
     }
@@ -76,7 +76,7 @@ export function ShowcaseReveal() {
       const y = startY * (1 - e);
       const s = startScale + (1 - startScale) * e;
 
-      media.style.transform = `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${s.toFixed(4)})`;
+      media.style.transform = `translate3d(-50%, calc(-50% + ${y.toFixed(3)}vh), 0) scale(${s.toFixed(4)})`;
       media.style.opacity = String(0.6 + 0.4 * clamp(e * 1.6));
       if (glowRef.current) glowRef.current.style.opacity = String(0.35 * (1 - e));
     };
@@ -122,7 +122,7 @@ export function ShowcaseReveal() {
         />
         <div
           ref={mediaRef}
-          className="absolute left-1/2 top-1/2 w-[94vw] max-w-[1700px] -translate-x-1/2 -translate-y-1/2 will-change-transform"
+          className="absolute left-1/2 top-1/2 w-[94vw] max-w-[1700px] will-change-transform"
           style={{ transformOrigin: "50% 50%" }}
 
         >
