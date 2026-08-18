@@ -54,41 +54,49 @@ export function ShowcaseReveal() {
     }
 
     let raf = 0;
-    let queued = false;
+    let target = 0;
+    let current = -1;
 
-    const apply = () => {
-      queued = false;
+    const readProgress = () => {
       const rect = section.getBoundingClientRect();
       const vh = window.innerHeight;
-      const w = window.innerWidth;
-
-      // progress: 0 when section top reaches bottom of viewport, 1 when the
-      // sticky travel is exhausted.
       const travel = rect.height - vh;
-      const p = clamp(travel > 0 ? -rect.top / travel : 0);
+      return clamp(travel > 0 ? -rect.top / travel : 0);
+    };
+
+    const render = (p: number) => {
+      const w = window.innerWidth;
       const e = easeOutCubic(p);
 
-      // device-tuned ranges
       const mobile = w < 640;
       const tablet = w >= 640 && w < 1024;
-      const startY = mobile ? 26 : tablet ? 32 : 40; // vh
-      const startScale = mobile ? 0.82 : tablet ? 0.75 : 0.68;
+      const startY = mobile ? 12 : tablet ? 16 : 20; // vh
+      const startScale = mobile ? 0.62 : tablet ? 0.55 : 0.46;
 
       const y = startY * (1 - e);
       const s = startScale + (1 - startScale) * e;
 
       media.style.transform = `translate3d(0, ${y.toFixed(3)}vh, 0) scale(${s.toFixed(4)})`;
-      media.style.opacity = String(0.55 + 0.45 * clamp(e * 1.6));
+      media.style.opacity = String(0.6 + 0.4 * clamp(e * 1.6));
       if (glowRef.current) glowRef.current.style.opacity = String(0.35 * (1 - e));
     };
 
-    const onScroll = () => {
-      if (queued) return;
-      queued = true;
-      raf = requestAnimationFrame(apply);
+    // smooth both directions: grows on scroll down, shrinks back on scroll up
+    const loop = () => {
+      const diff = target - current;
+      current += Math.abs(diff) < 0.0005 ? diff : diff * 0.12;
+      render(current);
+      raf = requestAnimationFrame(loop);
     };
 
-    apply();
+    const onScroll = () => {
+      target = readProgress();
+    };
+
+    target = readProgress();
+    current = target;
+    render(current);
+    raf = requestAnimationFrame(loop);
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onScroll, { passive: true });
     return () => {
@@ -97,6 +105,7 @@ export function ShowcaseReveal() {
       window.removeEventListener("resize", onScroll);
     };
   }, []);
+
 
   return (
     <section
