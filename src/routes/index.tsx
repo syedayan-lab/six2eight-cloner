@@ -37,6 +37,7 @@ function Index() {
       <Header />
       <main id="main-content">
         <Hero />
+        <ShowcaseReveal />
         <Services />
         <ClientLogos />
         <Portfolio />
