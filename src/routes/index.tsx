@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Preloader } from "@/components/site/preloader";
 import { Header } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
+import { ShowcaseReveal } from "@/components/site/showcase-reveal";
 import { Services, ClientLogos } from "@/components/site/services";
 import { Portfolio } from "@/components/site/portfolio";
 import { Testimonials, Strategy } from "@/components/site/testimonials";
@@ -36,6 +37,7 @@ function Index() {
       <Header />
       <main id="main-content">
         <Hero />
+        <ShowcaseReveal />
         <Services />
         <ClientLogos />
         <Portfolio />
