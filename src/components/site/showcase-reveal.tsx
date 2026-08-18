@@ -113,20 +113,20 @@ export function ShowcaseReveal() {
         />
         <div
           ref={mediaRef}
-          className="absolute left-1/2 top-0 w-[94vw] max-w-[1700px] -translate-x-1/2 will-change-transform"
+          className="absolute left-1/2 top-[6vh] w-[94vw] max-w-[1700px] -translate-x-1/2 will-change-transform"
           style={{ transformOrigin: "50% 0%" }}
         >
-          <div className="relative overflow-hidden rounded-[28px] border border-border bg-ink p-3 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:p-5">
-            <div className="grid h-[86vh] grid-cols-2 gap-3 overflow-hidden sm:grid-cols-3 lg:grid-cols-5">
+          <div className="relative h-[88vh] overflow-hidden rounded-[28px] border border-border bg-ink p-2.5 shadow-[0_60px_140px_-40px_rgba(0,0,0,0.9)] sm:p-4">
+            <div className="grid h-full grid-cols-2 gap-2.5 overflow-hidden sm:grid-cols-3 sm:gap-3 lg:grid-cols-5">
               {columns.map((col, ci) => (
                 <div
                   key={ci}
-                  className={
-                    ci > 1 ? (ci > 2 ? "hidden gap-3 lg:flex lg:flex-col" : "hidden gap-3 sm:flex sm:flex-col") : "flex flex-col gap-3"
-                  }
-                  style={{ transform: `translateY(${ci % 2 === 0 ? "0" : "-3%"})` }}
+                  className={`flex min-h-0 flex-col gap-2.5 sm:gap-3 ${
+                    ci === 2 ? "hidden sm:flex" : ci > 2 ? "hidden lg:flex" : ""
+                  }`}
+                  style={{ transform: `translateY(${ci % 2 === 0 ? "-2%" : "-8%"})` }}
                 >
-                  {col.map((item, i) => (
+                  {[...col, ...col].map((item, i) => (
                     <div
                       key={`${ci}-${i}`}
                       className={`${item.ratio} w-full shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-surface`}
@@ -145,7 +145,7 @@ export function ShowcaseReveal() {
             </div>
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-ink to-transparent"
             />
           </div>
         </div>
