@@ -1,21 +1,27 @@
 import { ArrowUpRight, Quote, Star } from "lucide-react";
 import { CALENDLY, stats, testimonials } from "@/data/site";
+import { Reveal } from "./reveal";
+import { Magnetic } from "./magnetic";
 
 export function Testimonials() {
   return (
     <section className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow">
-          <span className="size-1.5 rounded-full bg-primary" />
+        <Reveal as="p" className="eyebrow" variant="left">
+          <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
           Testimonials
-        </p>
-        <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
-          Words from the People We&rsquo;ve Worked With
-        </h2>
+        </Reveal>
+        <Reveal variant="blur" delay={80}>
+          <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
+            Words from the People We&rsquo;ve Worked With
+          </h2>
+        </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="glass-card hover-lift flex h-full flex-col justify-between p-6 sm:p-7">
+          {testimonials.map((t, i) => (
+            <Reveal key={t.name} variant="up" delay={(i % 3) * 110} className="h-full">
+            <figure className="glass-card hover-lift sheen-hover flex h-full flex-col justify-between p-6 sm:p-7">
+
               <Quote className="size-7 text-primary" />
               <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 {t.quote}
