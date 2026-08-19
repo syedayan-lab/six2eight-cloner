@@ -45,20 +45,23 @@ export function Testimonials() {
 
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-5 text-center">
+        <Reveal className="mt-12 flex flex-col items-center gap-5 text-center" variant="scale">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">200+ Happy Customers</span> based on
             compliments and customer reviews
           </p>
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noreferrer"
-            className="pill inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
-          >
-            Book a Free Consultation <ArrowUpRight className="size-4" />
-          </a>
-        </div>
+          <Magnetic>
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noreferrer"
+              className="pill press sheen-hover inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+            >
+              Book a Free Consultation <ArrowUpRight className="size-4" />
+            </a>
+          </Magnetic>
+        </Reveal>
+
       </div>
     </section>
   );
