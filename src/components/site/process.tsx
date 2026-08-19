@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { CALENDLY, processSteps } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { Reveal } from "./reveal";
+import { Magnetic } from "./magnetic";
 
 export function Process() {
   const [active, setActive] = useState(0);
@@ -10,18 +12,18 @@ export function Process() {
   return (
     <section className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow">
-          <span className="size-1.5 rounded-full bg-primary" />
+        <Reveal as="p" className="eyebrow" variant="left">
+          <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
           Our Process
-        </p>
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end">
+        </Reveal>
+        <Reveal className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end" variant="blur">
           <h2 className="text-display text-3xl sm:text-5xl">How We Get It Done.</h2>
           <p className="text-muted-foreground">
             Every step, done right. From discovery to launch — structured, smooth, and built to deliver.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="mt-10 flex flex-wrap gap-2">
+        <Reveal className="mt-10 flex flex-wrap gap-2" delay={80}>
           {processSteps.map((s, i) => (
             <button
               key={s.name}
@@ -29,9 +31,9 @@ export function Process() {
               onMouseEnter={() => setActive(i)}
               onClick={() => setActive(i)}
               className={cn(
-                "pill border px-5 py-2.5 text-sm transition-colors cursor-pointer",
+                "pill press border px-5 py-2.5 text-sm transition-all duration-300 cursor-pointer",
                 i === active
-                  ? "border-primary bg-primary text-primary-foreground"
+                  ? "border-primary bg-primary text-primary-foreground scale-105 shadow-[0_10px_30px_-12px_var(--color-primary)]"
                   : "border-border text-muted-foreground hover:bg-surface-2 hover:text-foreground",
               )}
             >
@@ -39,24 +41,35 @@ export function Process() {
               {s.name}
             </button>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="glass-card mt-8 grid gap-0 overflow-hidden lg:grid-cols-[1.2fr_1fr]">
+        <Reveal
+          className="glass-card mt-8 grid gap-0 overflow-hidden lg:grid-cols-[1.2fr_1fr]"
+          variant="scale"
+          delay={120}
+        >
           <div className="aspect-16/10 overflow-hidden lg:aspect-auto">
-            <img src={step.image} alt={step.alt} className="size-full object-cover" loading="lazy" />
+            <img
+              key={step.image}
+              src={step.image}
+              alt={step.alt}
+              className="size-full animate-fade-up object-cover"
+              loading="lazy"
+            />
           </div>
-          <div className="flex flex-col justify-center p-8 sm:p-10">
+          <div key={step.name} className="flex animate-fade-up flex-col justify-center p-8 sm:p-10">
             <span className="text-display text-6xl text-primary/25">
               {String(active + 1).padStart(2, "0")}
             </span>
             <h3 className="text-display mt-3 text-2xl sm:text-3xl">{step.name}</h3>
             <p className="mt-4 text-muted-foreground">{step.copy}</p>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );
 }
+
 
 export function ConsultCta() {
   return (

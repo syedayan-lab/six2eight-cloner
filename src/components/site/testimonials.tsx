@@ -1,21 +1,29 @@
 import { ArrowUpRight, Quote, Star } from "lucide-react";
 import { CALENDLY, stats, testimonials } from "@/data/site";
+import { Reveal } from "./reveal";
+import { Magnetic } from "./magnetic";
+import { CountUp } from "./count-up";
+
 
 export function Testimonials() {
   return (
     <section className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow">
-          <span className="size-1.5 rounded-full bg-primary" />
+        <Reveal as="p" className="eyebrow" variant="left">
+          <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
           Testimonials
-        </p>
-        <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
-          Words from the People We&rsquo;ve Worked With
-        </h2>
+        </Reveal>
+        <Reveal variant="blur" delay={80}>
+          <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
+            Words from the People We&rsquo;ve Worked With
+          </h2>
+        </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {testimonials.map((t) => (
-            <figure key={t.name} className="glass-card hover-lift flex h-full flex-col justify-between p-6 sm:p-7">
+          {testimonials.map((t, i) => (
+            <Reveal key={t.name} variant="up" delay={(i % 3) * 110} className="h-full">
+            <figure className="glass-card hover-lift sheen-hover flex h-full flex-col justify-between p-6 sm:p-7">
+
               <Quote className="size-7 text-primary" />
               <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">
                 {t.quote}
@@ -34,23 +42,28 @@ export function Testimonials() {
                 </span>
               </figcaption>
             </figure>
+            </Reveal>
           ))}
+
         </div>
 
-        <div className="mt-12 flex flex-col items-center gap-5 text-center">
+        <Reveal className="mt-12 flex flex-col items-center gap-5 text-center" variant="scale">
           <p className="text-sm text-muted-foreground">
             <span className="font-semibold text-foreground">200+ Happy Customers</span> based on
             compliments and customer reviews
           </p>
-          <a
-            href={CALENDLY}
-            target="_blank"
-            rel="noreferrer"
-            className="pill inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
-          >
-            Book a Free Consultation <ArrowUpRight className="size-4" />
-          </a>
-        </div>
+          <Magnetic>
+            <a
+              href={CALENDLY}
+              target="_blank"
+              rel="noreferrer"
+              className="pill press sheen-hover inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
+            >
+              Book a Free Consultation <ArrowUpRight className="size-4" />
+            </a>
+          </Magnetic>
+        </Reveal>
+
       </div>
     </section>
   );
@@ -60,24 +73,32 @@ export function Strategy() {
   return (
     <section id="strategy" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow">
-          <span className="size-1.5 rounded-full bg-primary" />
+        <Reveal as="p" className="eyebrow" variant="left">
+          <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
           Strategy
-        </p>
-        <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
-          Why brands choose <span className="text-primary">six2eight</span> for design &amp;
-          development?
-        </h2>
+        </Reveal>
+        <Reveal variant="blur" delay={80}>
+          <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
+            Why brands choose <span className="text-primary">six2eight</span> for design &amp;
+            development?
+          </h2>
+        </Reveal>
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-3xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {stats.map((s) => (
-            <div key={s.label} className="bg-surface p-8">
-              <p className="text-display text-4xl text-primary sm:text-5xl">{s.value}</p>
-              <h3 className="mt-3 text-base font-medium text-foreground">{s.label}</h3>
-              <p className="mt-2 text-sm text-muted-foreground">{s.copy}</p>
-            </div>
+          {stats.map((s, i) => (
+            <Reveal key={s.label} variant="up" delay={(i % 3) * 110} className="h-full">
+              <div className="group h-full bg-surface p-8 transition-colors hover:bg-surface-2">
+                <CountUp
+                  value={s.value}
+                  className="text-display block text-4xl text-primary sm:text-5xl"
+                />
+                <h3 className="mt-3 text-base font-medium text-foreground">{s.label}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{s.copy}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
+
       </div>
     </section>
   );

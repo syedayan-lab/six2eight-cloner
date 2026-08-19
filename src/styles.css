@@ -252,7 +252,159 @@
   }
 }
 
+/* ---------- scroll reveal system ---------- */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: transform, opacity;
+}
+.reveal-up {
+  transform: translate3d(0, 34px, 0);
+}
+.reveal-blur {
+  transform: translate3d(0, 22px, 0);
+  filter: blur(14px);
+}
+.reveal-scale {
+  transform: scale(0.94);
+}
+.reveal-left {
+  transform: translate3d(-40px, 0, 0);
+}
+.reveal-right {
+  transform: translate3d(40px, 0, 0);
+}
+.reveal[data-shown="true"] {
+  opacity: 1;
+  filter: blur(0);
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* shimmer sweep across a surface on hover */
+@keyframes sheen {
+  from {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+  to {
+    transform: translateX(240%) skewX(-18deg);
+  }
+}
+
+@utility sheen-hover {
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-primary) 22%, transparent),
+      transparent
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    pointer-events: none;
+  }
+
+  &:hover::after {
+    animation: sheen 0.9s ease-out;
+  }
+}
+
+/* slow ambient float for decorative elements */
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@utility animate-float-soft {
+  animation: float-soft var(--float-duration, 7s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+/* pulsing halo behind accents */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.08);
+  }
+}
+
+@utility animate-glow-pulse {
+  animation: glow-pulse 6s ease-in-out infinite;
+}
+
+/* animated gradient text */
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@utility text-shine {
+  background: linear-gradient(
+    90deg,
+    var(--color-foreground),
+    var(--color-primary),
+    var(--color-foreground)
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: text-shine 6s linear infinite;
+}
+
+/* underline that draws in on hover */
+@utility link-underline {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* 3d tilt-ish press feedback */
+@utility press {
+  transition: transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
