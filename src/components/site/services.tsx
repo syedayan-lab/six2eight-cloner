@@ -1,41 +1,49 @@
 import { ArrowUpRight } from "lucide-react";
 import { clientLogos, services } from "@/data/site";
+import { Reveal } from "./reveal";
+import { Magnetic } from "./magnetic";
 
 export function Services() {
   return (
     <section id="services" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow">
-          <span className="size-1.5 rounded-full bg-primary" />
+        <Reveal as="p" className="eyebrow" variant="left">
+          <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
           Services
-        </p>
+        </Reveal>
 
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
-          <h2 className="text-display text-3xl sm:text-5xl">
-            We help you design
-            <br />
-            and build <span className="text-primary">better digital products.</span> All in ONE place!
-          </h2>
-          <div>
+          <Reveal variant="blur">
+            <h2 className="text-display text-3xl sm:text-5xl">
+              We help you design
+              <br />
+              and build <span className="text-primary">better digital products.</span> All in ONE
+              place!
+            </h2>
+          </Reveal>
+          <Reveal delay={120}>
             <p className="text-muted-foreground">
               You need a partner who gets your business and covers everything. From branding to UI/UX
               design and web development, you can rely on us for everything.
             </p>
-            <a
-              href="#work"
-              className="pill mt-6 inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-2"
-            >
-              See All Services <ArrowUpRight className="size-4" />
-            </a>
-          </div>
+            <Magnetic className="mt-6">
+              <a
+                href="#work"
+                className="pill press sheen-hover inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-2"
+              >
+                See All Services <ArrowUpRight className="size-4" />
+              </a>
+            </Magnetic>
+          </Reveal>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
+          {services.map((s, i) => (
+            <Reveal key={s.title} variant="scale" delay={(i % 3) * 110}>
             <article
-              key={s.title}
-              className="group glass-card hover-lift overflow-hidden hover:border-primary/50"
+              className="group glass-card hover-lift sheen-hover h-full overflow-hidden hover:border-primary/50"
             >
+
               <div className="relative h-40 overflow-hidden sm:h-48">
 
                 <img
