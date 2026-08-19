@@ -2,6 +2,8 @@ import { useState } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { portfolioFilters, projects } from "@/data/site";
 import { cn } from "@/lib/utils";
+import { Reveal } from "./reveal";
+import { Magnetic } from "./magnetic";
 
 export function Portfolio() {
   const [active, setActive] = useState("All");
@@ -10,15 +12,18 @@ export function Portfolio() {
   return (
     <section id="work" className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="text-display text-3xl sm:text-5xl">Our portfolio</h2>
-          <a
-            href="#contact"
-            className="pill inline-flex w-fit items-center gap-2 border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
-          >
-            View All Work <ArrowUpRight className="size-4" />
-          </a>
-        </div>
+          <Magnetic>
+            <a
+              href="#contact"
+              className="pill press sheen-hover inline-flex w-fit items-center gap-2 border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
+            >
+              View All Work <ArrowUpRight className="size-4" />
+            </a>
+          </Magnetic>
+        </Reveal>
+
 
         <div className="mt-8 flex flex-wrap gap-2">
           {portfolioFilters.map((f) => (

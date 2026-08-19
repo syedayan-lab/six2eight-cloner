@@ -2,6 +2,8 @@ import { ArrowUpRight, Quote, Star } from "lucide-react";
 import { CALENDLY, stats, testimonials } from "@/data/site";
 import { Reveal } from "./reveal";
 import { Magnetic } from "./magnetic";
+import { CountUp } from "./count-up";
+
 
 export function Testimonials() {
   return (
