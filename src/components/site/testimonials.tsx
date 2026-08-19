@@ -40,7 +40,9 @@ export function Testimonials() {
                 </span>
               </figcaption>
             </figure>
+            </Reveal>
           ))}
+
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-5 text-center">
