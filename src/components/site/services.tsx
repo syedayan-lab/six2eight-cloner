@@ -74,7 +74,9 @@ export function Services() {
                 </span>
               </div>
             </article>
+            </Reveal>
           ))}
+
         </div>
       </div>
     </section>
