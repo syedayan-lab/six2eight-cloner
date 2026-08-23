@@ -44,7 +44,7 @@ export function Process() {
         </Reveal>
 
         <Reveal
-          className="glass-card mt-8 grid gap-0 overflow-hidden lg:grid-cols-[1.2fr_1fr]"
+          className="glass-card glass-polish mt-8 grid gap-0 overflow-hidden lg:grid-cols-[1.2fr_1fr]"
           variant="scale"
           delay={120}
         >
@@ -75,7 +75,7 @@ export function ConsultCta() {
   return (
     <section className="border-t border-border py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <div className="glass-card relative overflow-hidden px-6 py-14 text-center sm:px-14">
+        <div className="glass-card glass-polish relative overflow-hidden px-6 py-14 text-center sm:px-14">
           <div
             aria-hidden
             className="pointer-events-none absolute left-1/2 top-full h-72 w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-30 blur-[120px]"
