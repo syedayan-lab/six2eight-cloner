@@ -163,52 +163,100 @@ export type Project = {
   image: string;
   tools: string[];
   categories: string[];
+  year: string;
+  metric: string;
+  metricLabel: string;
+  featured?: boolean;
 };
+
+/** 4K-ready imagery (3840px wide source, auto-format + responsive srcset in the UI). */
+const shot = (id: string) => `https://images.unsplash.com/${id}?auto=format&fit=crop&q=90&w=3840`;
 
 export const projects: Project[] = [
   {
     name: "Sixpay",
     copy: "Our R&D team explored faster, flexible digital banking built for fearless business growth.",
-    image: `${CDN}/2025/06/hero-8.webp`,
+    image: shot("photo-1551288049-bebda4e38f71"),
     tools: ["Figma", "Webflow"],
     categories: ["UI/UX Design", "Webflow", "SaaS"],
+    year: "2025",
+    metric: "+38%",
+    metricLabel: "activation rate",
+    featured: true,
   },
   {
     name: "Userpath",
     copy: "We redesigned an agency site with high-velocity UI/UX, helping marketers automate and convert.",
-    image: `${CDN}/2025/06/hero-4.webp`,
+    image: shot("photo-1460925895917-afdab827c52f"),
     tools: ["Figma"],
     categories: ["Website Design", "UI/UX Design", "Web Development"],
+    year: "2025",
+    metric: "2.4x",
+    metricLabel: "demo requests",
   },
   {
     name: "Sereni Mind",
     copy: "Our R&D team proved how AI brings 24/7 mental health support to phones.",
-    image: `${CDN}/2025/06/hero-7.webp`,
+    image: shot("photo-1618761714954-0b8cd0026356"),
     tools: ["Figma"],
     categories: ["Mobile App", "UI/UX Design"],
+    year: "2024",
+    metric: "4.9★",
+    metricLabel: "app store rating",
   },
   {
     name: "Webtool",
     copy: "Built by six2eight, Webtool uses AI to transform complex audits into clear performance insights.",
-    image: `${CDN}/2025/06/hero-2.webp`,
+    image: shot("photo-1551288049-bebda4e38f71"),
     tools: ["Figma"],
     categories: ["SaaS", "Website Design", "Web Development"],
+    year: "2025",
+    metric: "-62%",
+    metricLabel: "time to insight",
   },
   {
     name: "Elora",
     copy: "A playful supplement brand identity built for shelf impact and e-commerce conversion.",
-    image: `${CDN}/2025/12/brand-identity-hero.webp`,
+    image: shot("photo-1526628953301-3e589a6a8b74"),
     tools: ["Figma"],
     categories: ["Branding", "Motion Graphics"],
+    year: "2024",
+    metric: "+51%",
+    metricLabel: "repeat orders",
   },
   {
     name: "Aura AI",
     copy: "Biometric onboarding reimagined — a secure flow that takes seconds, not minutes.",
-    image: `${CDN}/2025/06/hero-1.webp`,
+    image: shot("photo-1620712943543-bcc4688e7485"),
     tools: ["Figma"],
     categories: ["Mobile App", "UI/UX Design", "WordPress"],
+    year: "2025",
+    metric: "12s",
+    metricLabel: "average onboarding",
+    featured: true,
+  },
+  {
+    name: "Northwind Commerce",
+    copy: "A Shopify storefront rebuilt around speed, story and a checkout that never gets in the way.",
+    image: shot("photo-1517245386807-bb43f82c33c4"),
+    tools: ["Shopify", "Figma"],
+    categories: ["Website Design", "Web Development", "Branding"],
+    year: "2026",
+    metric: "+29%",
+    metricLabel: "conversion rate",
+  },
+  {
+    name: "Loopframe",
+    copy: "Motion system and product film for a creative ops platform launching to enterprise buyers.",
+    image: shot("photo-1611162617474-5b21e879e113"),
+    tools: ["After Effects", "Figma"],
+    categories: ["Motion Graphics", "Branding", "SaaS"],
+    year: "2026",
+    metric: "1.2M",
+    metricLabel: "launch views",
   },
 ];
+
 
 export const testimonials = [
   {
