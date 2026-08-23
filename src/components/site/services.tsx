@@ -41,7 +41,7 @@ export function Services() {
           {services.map((s, i) => (
             <Reveal key={s.title} variant="scale" delay={(i % 3) * 110}>
             <article
-              className="group glass-card hover-lift sheen-hover h-full overflow-hidden hover:border-primary/50"
+              className="group glass-card glass-polish hover-lift sheen-hover h-full overflow-hidden hover:border-primary/50"
             >
 
               <div className="relative h-40 overflow-hidden sm:h-48">

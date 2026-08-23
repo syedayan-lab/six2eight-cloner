@@ -22,7 +22,7 @@ export function Testimonials() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t, i) => (
             <Reveal key={t.name} variant="up" delay={(i % 3) * 110} className="h-full">
-            <figure className="glass-card hover-lift sheen-hover flex h-full flex-col justify-between p-6 sm:p-7">
+            <figure className="glass-card glass-polish hover-lift sheen-hover flex h-full flex-col justify-between p-6 sm:p-7">
 
               <Quote className="size-7 text-primary" />
               <blockquote className="mt-5 text-sm leading-relaxed text-muted-foreground">

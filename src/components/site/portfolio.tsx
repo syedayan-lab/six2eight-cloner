@@ -15,7 +15,7 @@ function ProjectCard({ p, large }: { p: Project; large?: boolean }) {
   return (
     <article
       className={cn(
-        "group glass-card hover-lift sheen-hover relative h-full overflow-hidden",
+        "group glass-card glass-polish hover-lift sheen-hover relative h-full overflow-hidden",
         large && "lg:flex lg:flex-col",
       )}
     >
@@ -36,10 +36,10 @@ function ProjectCard({ p, large }: { p: Project; large?: boolean }) {
 
         {/* top meta row */}
         <div className="absolute inset-x-0 top-0 flex items-start justify-between p-4 sm:p-5">
-          <span className="pill border border-border/60 bg-background/60 px-3 py-1 text-[11px] uppercase tracking-wider text-muted-foreground backdrop-blur-md">
+          <span className="pill glass-panel px-3 py-1 text-[11px] uppercase tracking-wider text-muted-foreground">
             {p.year}
           </span>
-          <span className="pill flex size-9 items-center justify-center border border-border/60 bg-background/60 text-foreground backdrop-blur-md transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
+          <span className="pill glass-panel flex size-9 items-center justify-center text-foreground transition-all duration-500 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground">
             <ArrowUpRight className="size-4 transition-transform duration-500 group-hover:rotate-45" />
           </span>
         </div>

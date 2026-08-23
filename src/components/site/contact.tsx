@@ -42,7 +42,7 @@ export function Contact() {
               globally.
             </p>
 
-            <div className="glass-card mt-10 flex gap-4 p-6">
+            <div className="glass-card glass-polish mt-10 flex gap-4 p-6">
               <MapPin className="mt-0.5 size-5 shrink-0 text-primary" />
               <div>
                 <p className="text-sm font-medium text-foreground">Headquarters</p>
@@ -55,7 +55,7 @@ export function Contact() {
             </div>
           </div>
 
-          <form onSubmit={onSubmit} className="glass-card p-7 sm:p-9">
+          <form onSubmit={onSubmit} className="glass-card glass-polish p-7 sm:p-9">
             <div className="grid gap-5 sm:grid-cols-2">
               <Field label="Hi, I'm" name="name" placeholder="Your name" required />
               <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
