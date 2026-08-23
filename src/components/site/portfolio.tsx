@@ -31,7 +31,7 @@ function ProjectCard({ p, large }: { p: Project; large?: boolean }) {
         />
 
         {/* depth wash + grain-free vignette */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/25 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-95" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/95 via-background/20 to-transparent opacity-70 transition-opacity duration-500 group-hover:opacity-95" />
         <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 [background:radial-gradient(120%_90%_at_50%_120%,color-mix(in_oklab,var(--color-primary)_28%,transparent),transparent_65%)]" />
 
         {/* top meta row */}
@@ -125,7 +125,7 @@ export function Portfolio() {
           ))}
         </Reveal>
 
-        <div className="mt-10 grid auto-rows-fr gap-5 sm:gap-6 lg:grid-cols-3">
+        <div className="mt-10 grid items-start gap-5 sm:gap-6 lg:grid-cols-3">
           {visible.map((p, i) => {
             const large = Boolean(p.featured) && i % 4 === 0;
             return (
