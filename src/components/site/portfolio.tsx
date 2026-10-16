@@ -155,7 +155,7 @@ export function Portfolio() {
 
         <div className="mt-10 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-6 lg:auto-rows-[16rem]">
           {visible.map((p, i) => {
-            const span = BENTO_SPANS[i % BENTO_SPANS.length];
+            const span = BENTO_SPANS[i % BENTO_SPANS.length] ?? BENTO_SPANS[0]!;
             const large = span.includes("row-span-2") || span.includes("col-span-4");
             return (
               <Reveal
