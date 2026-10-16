@@ -43,17 +43,17 @@ export function Hero() {
         <div className="mx-auto max-w-4xl text-center animate-fade-up">
           <p className="eyebrow justify-center">
             <span className="size-1.5 rounded-full bg-primary" />
-            UI UX Design &amp; Web Development Agency
+            Full-Service Digital Growth Agency
           </p>
           <h1 className="text-display mt-6 text-4xl sm:text-6xl lg:text-7xl">
             <span className="animate-word-in" style={{ ["--word-delay" as string]: "0.05s" }}>
-              Custom
+              WE BUILD
             </span>{" "}
             <span
               className="animate-word-in italic font-light text-primary"
               style={{ ["--word-delay" as string]: "0.25s" }}
             >
-              UI UX
+              DIGITAL
             </span>
             <span className="mx-2 inline-flex translate-y-1 items-center align-middle sm:mx-3">
               {heroImages.slice(0, 3).map((img, i) => (
@@ -71,21 +71,19 @@ export function Hero() {
               ))}
             </span>
             <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.05s" }}>
-              Design &amp;
+              SYSTEMS
             </span>
             <br className="hidden sm:block" />{" "}
             <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.25s" }}>
-              Web Development
+              THAT DRIVE
             </span>{" "}
             <span className="animate-word-in" style={{ ["--word-delay" as string]: "1.45s" }}>
-              Agency
+              GROWTH.
             </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground sm:text-lg">
-            We design high-performing websites, mobile apps, and SaaS platforms that delight users. And
-            we build websites that turn those experiences into results. Enhance your brand, drive sales,
-            and grow your revenue with us.
+            We combine strategy, design, technology, and digital marketing to help ambitious businesses attract customers, streamline operations, and scale with confidence.
           </p>
 
           <div className="mt-9 flex flex-col items-center justify-center gap-5 sm:flex-row">
@@ -95,7 +93,7 @@ export function Hero() {
               rel="noreferrer"
               className="pill inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
             >
-              Book a Call
+              Tell Us Your Challenge
               <ArrowUpRight className="size-4" />
             </a>
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -109,12 +107,12 @@ export function Hero() {
                   />
                 ))}
               </div>
-              <span className="flex items-center gap-1">
+              <a href="#services" className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="size-3.5 fill-primary text-primary" />
                 ))}
-                <span className="ml-1">4.9 on Clutch</span>
-              </span>
+                <span className="ml-1">Explore Our Services</span>
+              </a>
             </div>
           </div>
         </div>

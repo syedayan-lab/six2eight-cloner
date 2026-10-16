@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Work", href: "#work" },
   { label: "About Us", href: "#strategy" },
-  { label: "Blog", href: "#faq" },
+  { label: "FAQs", href: "#faq" },
 ];
 
 export function Header() {
@@ -53,7 +53,7 @@ export function Header() {
             rel="noreferrer"
             className="pill hidden items-center gap-2 bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:scale-[1.03] sm:inline-flex"
           >
-            Contact us
+            Start a Project
             <ArrowUpRight className="size-4" />
           </a>
           <button
@@ -86,7 +86,7 @@ export function Header() {
               rel="noreferrer"
               className="pill mt-5 inline-flex items-center justify-center gap-2 bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
             >
-              Contact us <ArrowUpRight className="size-4" />
+              Start a Project <ArrowUpRight className="size-4" />
             </a>
           </nav>
         </div>

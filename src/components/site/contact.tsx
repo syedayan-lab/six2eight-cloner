@@ -4,14 +4,14 @@ import { toast } from "sonner";
 
 const budgets = ["$1k to 10k", "$10k to 20k", "$20k to $50k", "$100k+"];
 const serviceOptions = [
-  "UI/UX Design",
-  "Web Design",
-  "Mobile App Design",
-  "Branding",
+  "Branding & Strategy",
+  "UI/UX Experiences",
   "Web Development",
-  "WordPress",
-  "Shopify",
-  "Webflow",
+  "SEO & Organic Growth",
+  "Paid Advertising",
+  "Lead Generation",
+  "AI Automation & CRM",
+  "E-commerce",
 ];
 
 export function Contact() {
@@ -20,7 +20,7 @@ export function Contact() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast.success("Thanks! We'll get back to you within 24 hours.");
+    toast.success("Demo form only — no enquiry was sent. Please use the consultation link to discuss your challenge.");
     e.currentTarget.reset();
     setService("");
   };
@@ -35,11 +35,10 @@ export function Contact() {
               Get in Touch
             </p>
             <h2 className="text-display mt-6 text-3xl sm:text-5xl">
-              Let&rsquo;s Talk About Your <span className="text-primary">Project</span>
+              LET&rsquo;S BUILD <span className="text-primary">WHAT&rsquo;S NEXT.</span>
             </h2>
             <p className="mt-5 max-w-md text-muted-foreground">
-              Tell us what you&rsquo;re building. We design and build high-quality digital products
-              globally.
+              Tell us where your business wants to go. We&rsquo;ll help you identify the right digital solutions to move forward.
             </p>
 
             <div className="glass-card glass-polish mt-10 flex gap-4 p-6">
@@ -57,7 +56,7 @@ export function Contact() {
 
           <form onSubmit={onSubmit} className="glass-card glass-polish p-7 sm:p-9">
             <div className="grid gap-5 sm:grid-cols-2">
-              <Field label="Hi, I'm" name="name" placeholder="Your name" required />
+              <Field label="Your name" name="name" placeholder="Your name" required />
               <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
             </div>
 
@@ -104,11 +103,11 @@ export function Contact() {
             </fieldset>
 
             <label className="mt-7 block">
-              <span className="text-sm text-muted-foreground">Additional info?</span>
+              <span className="text-sm text-muted-foreground">Your growth challenge</span>
               <textarea
                 name="message"
                 rows={4}
-                placeholder="Tell us about your project…"
+                placeholder="Tell us about your business, goals, and challenges…"
                 className="mt-2 w-full rounded-xl border border-border bg-surface-2 px-4 py-3 text-sm text-foreground outline-none transition-colors placeholder:text-muted-foreground/60 focus:border-primary"
               />
             </label>
@@ -117,7 +116,7 @@ export function Contact() {
               type="submit"
               className="pill mt-7 inline-flex w-full cursor-pointer items-center justify-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.01]"
             >
-              Get in Touch <ArrowUpRight className="size-4" />
+              Start a Project <ArrowUpRight className="size-4" />
             </button>
           </form>
         </div>

@@ -17,9 +17,9 @@ export function Process() {
           Our Process
         </Reveal>
         <Reveal className="mt-6 grid gap-6 lg:grid-cols-[1fr_1fr] lg:items-end" variant="blur">
-          <h2 className="text-display text-3xl sm:text-5xl">How We Get It Done.</h2>
+          <h2 className="text-display text-3xl sm:text-5xl">From Challenge to Growth.</h2>
           <p className="text-muted-foreground">
-            Every step, done right. From discovery to launch — structured, smooth, and built to deliver.
+            A focused growth workflow: understand the challenge, connect the right solutions, and keep learning after launch.
           </p>
         </Reveal>
 
@@ -86,11 +86,10 @@ export function ConsultCta() {
             Let&rsquo;s talk
           </p>
           <h2 className="text-display relative mx-auto mt-6 max-w-3xl text-3xl sm:text-5xl">
-            Consult <span className="text-primary">strategy</span> to build stronger product
+            Turn your <span className="text-primary">challenge</span> into a clear next step
           </h2>
           <p className="relative mx-auto mt-5 max-w-2xl text-muted-foreground">
-            30 minutes to understand your product, uncover the real problems, and figure out what
-            actually needs to change.
+            Discuss your business goals, identify the obstacles, and explore the digital solutions that could move you forward.
           </p>
           <a
             href={CALENDLY}
@@ -98,7 +97,7 @@ export function ConsultCta() {
             rel="noreferrer"
             className="pill relative mt-8 inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
           >
-            Book a Free Consultation <ArrowUpRight className="size-4" />
+            Tell Us Your Challenge <ArrowUpRight className="size-4" />
           </a>
         </div>
       </div>

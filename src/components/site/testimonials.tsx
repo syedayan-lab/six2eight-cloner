@@ -11,11 +11,11 @@ export function Testimonials() {
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal as="p" className="eyebrow" variant="left">
           <span className="size-1.5 rounded-full bg-primary animate-glow-pulse" />
-          Testimonials
+          Client Feedback · Placeholders
         </Reveal>
         <Reveal variant="blur" delay={80}>
           <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
-            Words from the People We&rsquo;ve Worked With
+            Space for Verified Client Perspectives
           </h2>
         </Reveal>
 
@@ -49,8 +49,8 @@ export function Testimonials() {
 
         <Reveal className="mt-12 flex flex-col items-center gap-5 text-center" variant="scale">
           <p className="text-sm text-muted-foreground">
-            <span className="font-semibold text-foreground">200+ Happy Customers</span> based on
-            compliments and customer reviews
+            <span className="font-semibold text-foreground">Verified reviews pending.</span> Cards and stars are
+            placeholders, not client endorsements or ratings.
           </p>
           <Magnetic>
             <a
@@ -59,7 +59,7 @@ export function Testimonials() {
               rel="noreferrer"
               className="pill press sheen-hover inline-flex items-center gap-2 bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03]"
             >
-              Book a Free Consultation <ArrowUpRight className="size-4" />
+              Tell Us Your Challenge <ArrowUpRight className="size-4" />
             </a>
           </Magnetic>
         </Reveal>
@@ -79,8 +79,7 @@ export function Strategy() {
         </Reveal>
         <Reveal variant="blur" delay={80}>
           <h2 className="text-display mt-6 max-w-3xl text-3xl sm:text-5xl">
-            Why brands choose <span className="text-primary">six2eight</span> for design &amp;
-            development?
+            Connected <span className="text-primary">digital growth.</span> Verified results to follow.
           </h2>
         </Reveal>
 
