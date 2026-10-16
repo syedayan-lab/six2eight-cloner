@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { heroImages } from "@/data/site";
 import { Toaster } from "@/components/ui/sonner";
 import { Preloader } from "@/components/site/preloader";
 import { Header } from "@/components/site/header";
@@ -12,9 +13,9 @@ import { Faq } from "@/components/site/faq";
 import { Contact } from "@/components/site/contact";
 import { Footer } from "@/components/site/footer";
 
-const title = "six2eight — Custom UI UX Design & Web Development Agency";
+const title = "six2eight — Full-Service Digital Growth Agency";
 const description =
-  "We design high-performing websites, mobile apps, and SaaS platforms that delight users — and build the sites that turn those experiences into revenue.";
+  "Strategy, branding, websites, SEO, advertising, lead generation, and AI automation: connected digital systems for ambitious businesses.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,6 +26,8 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: heroImages[0]?.src },
+      { name: "twitter:image", content: heroImages[0]?.src },
     ],
   }),
   component: Index,

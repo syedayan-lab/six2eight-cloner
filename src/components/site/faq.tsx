@@ -20,7 +20,7 @@ export function Faq() {
               FAQ
             </p>
             <h2 className="text-display mt-6 text-3xl sm:text-5xl">
-              Got Questions? Let&rsquo;s Clear Things Up.
+              Your Growth Questions, Answered.
             </h2>
             <p className="mt-5 text-muted-foreground">Clear answers to move forward confidently.</p>
             <Magnetic className="mt-7">
@@ -28,7 +28,7 @@ export function Faq() {
                 href="#contact"
                 className="pill press sheen-hover inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
               >
-                See FAQ <ArrowUpRight className="size-4" />
+                Discuss Your Challenge <ArrowUpRight className="size-4" />
               </a>
             </Magnetic>
           </Reveal>

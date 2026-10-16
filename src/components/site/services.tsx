@@ -15,23 +15,21 @@ export function Services() {
         <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-end">
           <Reveal variant="blur">
             <h2 className="text-display text-3xl sm:text-5xl">
-              We help you design
+              Your next stage of growth
               <br />
-              and build <span className="text-primary">better digital products.</span> All in ONE
-              place!
+              starts with <span className="text-primary">connected digital systems.</span> One partner.
             </h2>
           </Reveal>
           <Reveal delay={120}>
             <p className="text-muted-foreground">
-              You need a partner who gets your business and covers everything. From branding to UI/UX
-              design and web development, you can rely on us for everything.
+              We partner with ambitious businesses to turn digital challenges into measurable opportunities. From strategy and branding to high-performance websites, customer acquisition, and AI-powered automation, we build connected systems designed to move businesses forward.
             </p>
             <Magnetic className="mt-6">
               <a
                 href="#work"
                 className="pill press sheen-hover inline-flex items-center gap-2 border border-border px-6 py-3 text-sm font-medium text-foreground transition-colors hover:bg-surface-2"
               >
-                See All Services <ArrowUpRight className="size-4" />
+                Explore Growth Concepts <ArrowUpRight className="size-4" />
               </a>
             </Magnetic>
           </Reveal>
@@ -70,7 +68,7 @@ export function Services() {
                 </h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{s.copy}</p>
                 <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                  Learn more <ArrowUpRight className="size-4" />
+                  Growth-focused service <ArrowUpRight className="size-4" />
                 </span>
               </div>
             </article>
@@ -113,7 +111,7 @@ export function ClientLogos() {
   return (
     <section className="border-t border-border py-14 sm:py-16">
       <div className="mx-auto max-w-7xl px-5 lg:px-8">
-        <p className="eyebrow justify-center w-full text-center">Projects Completed For</p>
+        <p className="eyebrow justify-center w-full text-center">Brand Landscape · Not Client Endorsements</p>
       </div>
       <div className="mt-8 space-y-4 sm:mt-10 sm:space-y-6">
         {[row1, row2].map((row, idx) => (

@@ -39,7 +39,7 @@ function ProjectCard({ p, large }: { p: Project; large?: boolean }) {
         src={p.image}
         srcSet={srcSet(p.image)}
         sizes={large ? "(max-width: 1024px) 100vw, 66vw" : "(max-width: 1024px) 100vw, 33vw"}
-        alt={`${p.name} — ${p.categories.join(", ")} project by six2eight`}
+        alt={`${p.name} — ${p.categories.join(", ")} concept project`}
         loading="lazy"
         decoding="async"
         className="absolute inset-0 size-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
@@ -119,10 +119,10 @@ export function Portfolio() {
       <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
         <Reveal className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <span className="eyebrow text-muted-foreground">Selected work</span>
-            <h2 className="text-display mt-3 text-3xl sm:text-5xl">Our portfolio</h2>
+            <span className="eyebrow text-muted-foreground">Growth concepts</span>
+            <h2 className="text-display mt-3 text-3xl sm:text-5xl">Digital growth portfolio</h2>
             <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
-              Products shipped for founders and teams who measure design in outcomes, not screenshots.
+              Concept projects exploring branding, digital experiences, acquisition, and automation. These are demonstrations, not verified client case studies.
             </p>
           </div>
           <Magnetic>
@@ -130,7 +130,7 @@ export function Portfolio() {
               href="#contact"
               className="pill press sheen-hover inline-flex w-fit items-center gap-2 border border-border px-6 py-3 text-sm font-medium transition-colors hover:bg-surface-2"
             >
-              View All Work <ArrowUpRight className="size-4" />
+              Discuss Your Project <ArrowUpRight className="size-4" />
             </a>
           </Magnetic>
         </Reveal>
@@ -172,7 +172,7 @@ export function Portfolio() {
 
         {visible.length === 0 && (
           <p className="mt-12 text-center text-muted-foreground">
-            No projects in this category yet — check back soon.
+            No concept projects in this category yet.
           </p>
         )}
       </div>

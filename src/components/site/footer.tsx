@@ -1,15 +1,15 @@
 const designServices = [
-  "Web Design",
-  "Mobile App Design",
-  "SaaS Web & App Design",
-  "Branding",
-  "Motion Graphics",
+  "Branding & Strategy",
+  "UI/UX Experiences",
+  "SEO & Organic Growth",
+  "Paid Advertising",
+  "Lead Generation",
 ];
 const devServices = [
   "Web Development",
-  "WordPress Development",
-  "Shopify Development",
-  "Webflow Development",
+  "E-commerce",
+  "AI Automation & CRM",
+  "Web Applications",
 ];
 const company = ["About Us", "FAQs", "Blogs", "Team", "Career"];
 const socials = ["Dribbble", "Instagram", "Behance", "LinkedIn", "Facebook"];
@@ -24,7 +24,7 @@ export function Footer() {
               six<span className="text-primary">2</span>eight
             </span>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              A UI/UX design and web development agency building digital products that perform.
+              A full-service digital growth agency connecting strategy, design, technology, and marketing to move businesses forward.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
               {socials.map((s) => (
@@ -38,8 +38,8 @@ export function Footer() {
             </div>
           </div>
 
-          <FooterCol title="Design Services" items={designServices} />
-          <FooterCol title="Development Services" items={devServices} />
+          <FooterCol title="Strategy & Growth" items={designServices} />
+          <FooterCol title="Technology & Systems" items={devServices} />
           <FooterCol title="Company" items={company} />
         </div>
 
